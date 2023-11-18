@@ -9,17 +9,27 @@ import java.util.Scanner;
 public class Solution {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int min1 = 2147483646;
-        int min2 = 2147483647;
-        int number;
-        while (sc.hasNextInt()) {
-            number = sc.nextInt();
-                if (number <= min1) {
-                    min2 = min1;
-                    min1 = number;
-                }
-            }
-        System.out.println(min2);
+        int min = sc.nextInt();
+        int secondMin = sc.nextInt();
+        if (secondMin > min) {
+            int temp = min;
+            min = secondMin;
+            secondMin = temp;
         }
+
+        while (sc.hasNextInt()) {
+            int number = sc.nextInt();
+            if (min == secondMin && number > min) {
+                secondMin = number;
+            } else if (number < min) {
+                secondMin = min;
+                min = number;
+            } else if (number > min && number < secondMin) {
+                secondMin = number;
+            }
+
+        }
+        System.out.println(secondMin);
     }
+}
 
