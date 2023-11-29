@@ -16,9 +16,17 @@ public class Solution {
 
     public static void main(String[] args) {
         for (int i = 0; i < height; i++) {
+            int x = (int) (Math.random() * width);
             for (int j = 0; j < width; j++) {
                 field[i][j] = empty;
-                System.out.print(field[i][j]);
+                //System.out.print(field[i][j]);
+            }
+            //System.out.println();
+            field[i][x] = robotank;
+        }
+        for (int k = 0; k < field.length; k++) {
+            for (int m = 0; m < width; m++) {
+                System.out.print(field[k][m]);
             }
             System.out.println();
         }
