@@ -12,7 +12,8 @@ public class Solution {
     public static String hit = "🎯";
     public static int width = 30;
     public static int height = 10;
-    public static String[][] field = new String [height][width];
+    public static String[][] field = new String[height][width];
+    public static int[][] bombs = new int[height][width];
 
     public static void main(String[] args) {
         for (int i = 0; i < height; i++) {
@@ -29,6 +30,20 @@ public class Solution {
                 System.out.print(field[k][m]);
             }
             System.out.println();
+        }
+        for (int b = 0; b < bombs.length; b++) {
+
+            for (int c = 0; c < width; c++) {
+                if (c % 3 == 0) {
+                    bombs[b][c] = 1;
+                    System.out.print(bombs[b][c]);
+                } else {
+                    bombs[b][c] = 0;
+                    System.out.print(bombs[b][c]);
+                }
+            }
+            System.out.println();
+
         }
     }
 }
