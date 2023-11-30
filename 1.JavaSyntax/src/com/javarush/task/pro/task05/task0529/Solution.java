@@ -45,5 +45,15 @@ public class Solution {
             System.out.println();
 
         }
+
+
+//        for (int w = 0; w < field.length; w++) {
+//            for (int r = 0; r < width; r++) {
+//                if (field[w][0] = robotank &&
+//            }
+//
+//            }
+//        }
+
     }
 }
