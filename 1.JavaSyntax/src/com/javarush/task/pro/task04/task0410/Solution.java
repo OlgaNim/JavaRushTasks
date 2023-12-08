@@ -11,7 +11,7 @@ public class Solution {
         Scanner sc = new Scanner(System.in);
         int min = sc.nextInt();
         int secondMin = sc.nextInt();
-        if (secondMin > min) {
+        if (secondMin < min) {
             int temp = min;
             min = secondMin;
             secondMin = temp;
