@@ -31,19 +31,22 @@ public class Solution {
     public static void findDiablo() {
         System.out.println(getFirstPositionPhrase);
         Scanner sc = new Scanner(System.in);
-        int number = sc.nextInt();
-        while (number != Solution.diabloPosition) {
-            System.out.println(getPositionPhrase);
-        number = sc.nextInt();
+        while (true) {
+            int number = sc.nextInt();
+            if (diabloPosition == number) {
+                System.out.println(findDiabloPhrase);
+                return;
+            } else {
+                System.out.println(getPositionPhrase);
+            }
         }
-        System.out.println(findDiabloPhrase);
     }
 
-    public static void amigoLostLife(){
+    public static void amigoLostLife() {
         amigoLives = amigoLives - 1;
     }
 
-    public static void diabloLostLife(){
+    public static void diabloLostLife() {
         diabloLives = diabloLives - 3;
     }
 
@@ -56,10 +59,8 @@ public class Solution {
     }
 
     public static void battle() {
-        while (amigoLives > 0 || diabloLives > 0) {
-            amigoAttacks();
-            diabloDefends();
-            if (diabloDefends() >= amigoAttacks()) {
+        while (amigoLives > 0 && diabloLives > 0) {
+            if (amigoAttacks() == diabloDefends()) {
                 amigoLostLife();
                 System.out.println(diabloDefendPhrase);
             } else {
