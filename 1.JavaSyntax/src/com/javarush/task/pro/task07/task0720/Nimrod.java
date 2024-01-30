@@ -4,9 +4,9 @@ public class Nimrod {
     public static int laser = 100000;
     public static int rocket = 10000;
     public static int angelicaKiss;
-    public int health = 1000000;
+    public static int health = 1000000;
 
-    public void defend(int number) {
+    public static void defend(int number) {
         health = health - number;
     }
 
