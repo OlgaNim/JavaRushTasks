@@ -13,13 +13,14 @@ public class BattleField {
     public static String galavirDestroy = "Вражеский корабль повержен";
 
     public static void main(String[] args) {
-        GalavirXIII shipG = new GalavirXIII();
-        Nimrod shipN = new Nimrod();
+        GalavirXIII galavir = new GalavirXIII();
+        Nimrod nimrod = new Nimrod();
+
         do {
             System.out.println(galavirAttack);
-            //int result = shipG.attack();
-            shipN.defend(shipG.attack());
-        } while (shipN.health > 0);
+            int resultOfGalavirAttack = galavir.attack();
+            nimrod.defend(resultOfGalavirAttack);
+        } while (isNimrodAlive(nimrod));
     }
 
     public static boolean isNimrodAlive(Nimrod nimrod) {
