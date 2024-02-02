@@ -19,8 +19,24 @@ public class BattleField {
         do {
             System.out.println(galavirAttack);
             int resultOfGalavirAttack = galavir.attack();
-            System.out.println("Nimrod health = " + nimrod.health);
+            //System.out.println("Nimrod health = " + nimrod.health);
             nimrod.defend(resultOfGalavirAttack);
+            if (isNimrodAlive(nimrod)) {
+                System.out.println(nimrodAttack);
+                int resultOfNimrodAttack = nimrod.attack();
+                galavir.defend(resultOfNimrodAttack);
+                if (isGalavirAlive(galavir)) {
+                    continue;
+                } else {
+                    break;
+                }
+                // в задаче иду в класс галавир и там меняю метод дефенд
+                // на инт вместо воид, который возвращает интовый результат
+                //System.out.println(galavir.defend(resultOfNimrodAttack));
+                //System.out.println("Galavir health = " + galavir.health);
+            } else {
+                break;
+            }
         } while (isNimrodAlive(nimrod));
     }
 
