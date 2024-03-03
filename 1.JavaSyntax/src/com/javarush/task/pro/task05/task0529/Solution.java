@@ -27,33 +27,33 @@ public class Solution {
         }
         for (int k = 0; k < field.length; k++) {
             for (int m = 0; m < width; m++) {
-                System.out.print(field[k][m]);
+                //System.out.print(field[k][m]);
             }
-            System.out.println();
+            //System.out.println();
         }
         for (int b = 0; b < bombs.length; b++) {
 
             for (int c = 0; c < width; c++) {
                 if (c % 3 == 0) {
                     bombs[b][c] = 1;
-                    System.out.print(bombs[b][c]);
+                    //System.out.print(bombs[b][c]);
                 } else {
                     bombs[b][c] = 0;
-                    System.out.print(bombs[b][c]);
+                    //System.out.print(bombs[b][c]);
                 }
             }
-            System.out.println();
+            //System.out.println();
 
         }
 
-
-//        for (int w = 0; w < field.length; w++) {
-//            for (int r = 0; r < width; r++) {
-//                if (field[w][0] = robotank &&
-//            }
-//
-//            }
-//        }
-
+        for (int i = 0; i < field.length; i++) {
+            for (int j = 0; j < width; j++) {
+                if (field[i][j] == robotank && bombs[i][j] == 1) {
+                    field[i][j] = hit;
+                }
+                System.out.print(field[i][j]);
+            }
+            System.out.println();
+        }
     }
 }
